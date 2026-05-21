@@ -10,6 +10,7 @@ export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/scalable/apps/flacon.svg
 export DESKTOP=/usr/share/applications/flacon.desktop
+export STARTUPWMCLASS=flacon
 export DEPLOY_QT=1
 export QT_DIR=qt6
 
