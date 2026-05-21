@@ -8,9 +8,7 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     faac          \
-    flac          \
     kvantum       \
-    lame          \
     lxqt-qtplugin \
     mac           \
     opus-tools    \
