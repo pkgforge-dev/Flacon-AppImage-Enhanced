@@ -6,14 +6,21 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-# pacman -Syu --noconfirm PACKAGESHERE
+pacman -Syu --noconfirm \
+    opus-tools   \
+    sox          \
+    vorbis-tools \
+    wavpack
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
+make-aur-package alacenc
+make-aur-package mac
+make-aur-package ttaenc
+make-aur-package flacon
 
 # If the application needs to be manually built that has to be done down here
 
