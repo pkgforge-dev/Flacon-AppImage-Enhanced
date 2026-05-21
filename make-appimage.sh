@@ -15,7 +15,17 @@ export DEPLOY_QT=1
 export QT_DIR=qt6
 
 # Deploy dependencies
-quick-sharun /usr/bin/flacon /usr/bin/sox /usr/bin/mac /usr/bin/alacenc /usr/bin/oggenc /usr/bin/opusenc 
+quick-sharun /usr/bin/flacon \
+  /usr/bin/faac \
+  /usr/bin/flac \
+  /usr/bin/lame \
+  /usr/bin/mac \
+  /usr/bin/alacenc \
+  /usr/bin/oggenc \
+  /usr/bin/opusenc \
+  /usr/bin/sox \
+  /usr/bin/wavpack \
+  /usr/bin/wvunpack
 
 # Additional changes can be done in between here
 
