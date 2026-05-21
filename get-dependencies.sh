@@ -7,9 +7,12 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    opus-tools   \
-    sox          \
-    vorbis-tools \
+    kvantum       \
+    lxqt-qtplugin \
+    opus-tools    \
+    qt6ct         \
+    sox           \
+    vorbis-tools  \
     wavpack
 
 echo "Installing debloated packages..."
