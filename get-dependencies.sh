@@ -22,7 +22,9 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
 make-aur-package alacenc
-make-aur-package ttaenc
+if [ "$ARCH" = "x86_64" ]; then
+    make-aur-package ttaenc
+fi
 make-aur-package flacon
 
 # If the application needs to be manually built that has to be done down here
