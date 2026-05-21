@@ -16,11 +16,11 @@ export QT_DIR=qt6
 
 # Deploy dependencies
 quick-sharun /usr/bin/flacon \
+  /usr/bin/alacenc \
   /usr/bin/faac \
   /usr/bin/flac \
   /usr/bin/lame \
   /usr/bin/mac \
-  /usr/bin/alacenc \
   /usr/bin/oggenc \
   /usr/bin/opusenc \
   /usr/bin/sox \
