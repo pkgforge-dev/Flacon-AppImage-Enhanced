@@ -6,14 +6,27 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-# pacman -Syu --noconfirm PACKAGESHERE
+pacman -Syu --noconfirm \
+    faac          \
+    kvantum       \
+    lxqt-qtplugin \
+    mac           \
+    opus-tools    \
+    qt6ct         \
+    sox           \
+    vorbis-tools  \
+    wavpack
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini opus-mini
 
 # Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
+make-aur-package alacenc
+if [ "$ARCH" = "x86_64" ]; then
+    make-aur-package ttaenc
+fi
+make-aur-package flacon
 
 # If the application needs to be manually built that has to be done down here
 
