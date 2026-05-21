@@ -9,6 +9,7 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     kvantum       \
     lxqt-qtplugin \
+    mac           \
     opus-tools    \
     qt6ct         \
     sox           \
@@ -21,7 +22,6 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
 make-aur-package alacenc
-make-aur-package mac
 make-aur-package ttaenc
 make-aur-package flacon
 
