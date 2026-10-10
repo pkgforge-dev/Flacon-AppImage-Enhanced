@@ -26,13 +26,6 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini opus-mini
 
-# Comment this out if you need an AUR package
-#make-aur-package alacenc
-#if [ "$ARCH" = "x86_64" ]; then
-#    make-aur-package ttaenc
-#fi
-#make-aur-package flacon
-
 echo "Building alacenc..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/flacon/alacenc"
@@ -55,8 +48,8 @@ fi
 echo "Building stable version of Flacon..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/flacon/flacon"
-VERSION="$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//; s/^v//')"
-git clone --depth 1 "$REPO" ./flacon
+VERSION="$(git ls-remote --tags --refs --sort="v:refname" "$REPO" | sed 's|.*refs/tags/||' | grep -E '^v?[0-9]+(\.[0-9]+)*$' | tail -n1 | sed 's/^v//')"
+git clone --depth 1 --branch v"$VERSION" "$REPO" ./flacon
 echo "$VERSION" > ~/version
 
 export LANG=C.UTF-8
